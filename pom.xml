@@ -64,6 +64,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- MapStruct -->
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>1.5.2.Final</version> <!-- Usa la última versión disponible -->
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -72,10 +78,13 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
+					<source>17</source> <!-- Ajusta a la versión de Java que uses -->
+					<target>17</target> <!-- Ajusta a la versión de Java que uses -->
 					<annotationProcessorPaths>
 						<path>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
+							<groupId>org.mapstruct</groupId>
+							<artifactId>mapstruct-processor</artifactId>
+							<version>1.5.2.Final</version> <!-- La versión de MapStruct -->
 						</path>
 					</annotationProcessorPaths>
 				</configuration>
