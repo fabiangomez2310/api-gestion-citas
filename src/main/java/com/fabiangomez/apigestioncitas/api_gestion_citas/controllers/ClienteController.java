@@ -1,6 +1,5 @@
 package com.fabiangomez.apigestioncitas.api_gestion_citas.controllers;
 
-
 import java.util.List;
 import java.util.Optional;
 
@@ -31,7 +30,7 @@ public class ClienteController {
     public ResponseEntity<ClienteDTO> obtenerClientePorId(@PathVariable("id") Long id) {
         Optional<ClienteDTO> cliente = clienteService.obtenerClientePorId(id);
         return cliente.map(c -> new ResponseEntity<>(c, HttpStatus.OK))
-                      .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     // Crear un nuevo cliente
@@ -43,31 +42,23 @@ public class ClienteController {
 
     // Actualizar cliente
     @PutMapping("/{id}")
-    public ResponseEntity<ClienteDTO> actualizarCliente(@PathVariable("id") Long id, 
-                                                        @RequestBody ClienteDTO clienteDTO) {
-        try {
-            ClienteDTO clienteActualizado = clienteService.actualizarCliente(id, clienteDTO);
-            return new ResponseEntity<>(clienteActualizado, HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+    public ResponseEntity<ClienteDTO> actualizarCliente(@PathVariable("id") Long id,
+            @RequestBody ClienteDTO clienteDTO) {
+        ClienteDTO clienteActualizado = clienteService.actualizarCliente(id, clienteDTO);
+        return new ResponseEntity<>(clienteActualizado, HttpStatus.OK);
     }
 
     // Eliminar cliente
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminarCliente(@PathVariable("id") Long id) {
-        try {
-            clienteService.eliminarCliente(id);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        clienteService.eliminarCliente(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     // Actualizar estado de un cliente
     @PatchMapping("/{id}/estado")
     public ResponseEntity<ClienteDTO> actualizarEstado(@PathVariable("id") Long id,
-                                                      @RequestParam("nuevoEstado") String nuevoEstado) {
+            @RequestParam("nuevoEstado") String nuevoEstado) {
         try {
             ClienteDTO clienteActualizado = clienteService.actualizarEstado(id, nuevoEstado);
             return new ResponseEntity<>(clienteActualizado, HttpStatus.OK);

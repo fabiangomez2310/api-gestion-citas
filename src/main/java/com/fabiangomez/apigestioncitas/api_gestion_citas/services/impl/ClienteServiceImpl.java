@@ -17,11 +17,8 @@ import com.fabiangomez.apigestioncitas.api_gestion_citas.services.interfaces.ICl
 
 @Service
 public class ClienteServiceImpl implements IClienteService{
-
-
    
     private final ClienteRepository clienteRepository;
-
     
     private final ClienteMapper clienteMapper;
 
