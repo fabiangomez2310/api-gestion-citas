@@ -1,8 +1,9 @@
 package com.fabiangomez.apigestioncitas.api_gestion_citas.enums;
 
-public enum EstadoCliente {
+public enum EstadoProfesional {
     ACTIVO,
     INACTIVO,
-    BLOQUEADO,
-    ELIMINADO
+    SUSPENDIDO,
+    EN_VACACIONES,
+    NO_DISPONIBLE
 }
