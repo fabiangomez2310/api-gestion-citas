@@ -1,5 +1,7 @@
 package com.fabiangomez.apigestioncitas.api_gestion_citas.mappers;
 
+import java.util.List;
+
 import org.mapstruct.Mapper;
 
 import com.fabiangomez.apigestioncitas.api_gestion_citas.dtos.ClienteDTO;
@@ -12,4 +14,6 @@ public interface ClienteMapper {
 
     Cliente toEntity(ClienteDTO clienteDTO);
 
+    List<ClienteDTO> toDTOList(List<Cliente> clientes);
+    
 }
