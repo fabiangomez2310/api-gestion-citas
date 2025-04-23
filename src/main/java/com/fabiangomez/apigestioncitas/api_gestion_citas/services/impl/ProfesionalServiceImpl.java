@@ -82,23 +82,4 @@ public class ProfesionalServiceImpl implements IProfesionalService {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'buscarProfesionalesPorNombresOApellidos'");
     }
-
-    @Override
-    public boolean existePorNumeroDocumento(String numeroDocumento) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'existePorNumeroDocumento'");
-    }
-
-    @Override
-    public boolean existePorCorreo(String correo) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'existePorCorreo'");
-    }
-
-    @Override
-    public boolean existePorTelefono(String telefono) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'existePorTelefono'");
-    }
-
 }

@@ -17,15 +17,6 @@ public interface IProfesionalService {
 
     void eliminarProfesional(Long id);
 
-    // Buscar profesionales por nombres o apellidos
     List<ProfesionalDTO> buscarProfesionalesPorNombresOApellidos(String nombres, String apellidos);
-
-    boolean existePorNumeroDocumento(String numeroDocumento);
-
-    boolean existePorCorreo(String correo);
-
-    boolean existePorTelefono(String telefono);
-
-
 
 }
