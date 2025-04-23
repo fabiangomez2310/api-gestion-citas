@@ -44,7 +44,6 @@ public class Cliente {
     @Size(min = 5, max = 20, message = "El numero de documento debe tener entre 5 y 20 caracteres")
     private String numeroDocumento;
 
-
     @Column(name = "nombre_completo", nullable = false, length = 100)
     @NotBlank(message = "El nombre completo no puede estar vacio")
     @Size(max = 100, message = "El nombre completo debe tener máximo 100 caracteres")
