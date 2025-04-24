@@ -2,6 +2,8 @@ package com.fabiangomez.apigestioncitas.api_gestion_citas.entities;
 
 
 
+import java.util.List;
+
 import com.fabiangomez.apigestioncitas.api_gestion_citas.enums.EstadoCliente;
 import com.fabiangomez.apigestioncitas.api_gestion_citas.enums.TipoDocumento;
 
@@ -12,6 +14,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -64,5 +67,8 @@ public class Cliente {
     @Column(name = "estado", nullable = false)
     @NotNull(message = "El estado del cliente no puede ser nulo")
     private EstadoCliente estado;
+
+    @OneToMany(mappedBy = "cliente")
+    private List<Cita> citas;
 
 }

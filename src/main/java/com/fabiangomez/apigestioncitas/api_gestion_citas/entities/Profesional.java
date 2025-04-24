@@ -1,5 +1,7 @@
 package com.fabiangomez.apigestioncitas.api_gestion_citas.entities;
 
+import java.util.List;
+
 import com.fabiangomez.apigestioncitas.api_gestion_citas.enums.EstadoProfesional;
 import com.fabiangomez.apigestioncitas.api_gestion_citas.enums.TipoDocumento;
 
@@ -10,6 +12,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -66,4 +69,6 @@ public class Profesional {
     @NotNull(message = "El estado del profesional no puede ser nulo.")
     private EstadoProfesional estado;
 
+    @OneToMany(mappedBy = "profesional")
+    private List<Cita> citas;
 }
