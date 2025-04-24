@@ -1,5 +1,7 @@
 package com.fabiangomez.apigestioncitas.api_gestion_citas.dtos;
 
+import java.util.List;
+
 import com.fabiangomez.apigestioncitas.api_gestion_citas.enums.EstadoProfesional;
 import com.fabiangomez.apigestioncitas.api_gestion_citas.enums.TipoDocumento;
 
@@ -43,6 +45,7 @@ public class ProfesionalDTO {
     private String telefono;
 
     @NotNull(message = "El estado del profesional no puede ser nulo.")
-    private EstadoProfesional estado;
+    private EstadoProfesional estado;   
 
+    private List<CitaDTO> citas;
 }
